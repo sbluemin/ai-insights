@@ -10,11 +10,32 @@
 - **재사용 가능** — 어느 프로젝트·도구에서도 적용 가능한 형태로 기술한다.
 - **최소·고신호** — 적고 강한 문서. 오래되거나 틀린 문서는 가지치기한다.
 
-> 작성·기여 규약의 단일 출처(SSoT)는 [`AGENTS.md`](./AGENTS.md)다. (`CLAUDE.md`는 그 심볼릭 링크.)
+> 작성·기여 규약의 단일 출처(SSoT)는 [`CLAUDE.md`](./CLAUDE.md)다.
+
+## 플러그인으로 쓰기
+
+이 저장소는 Claude Code **플러그인**이기도 하다. 문서의 방법론을 skill·command로 바로 호출할 수 있다.
+
+```
+/plugin marketplace add sbluemin/ai-insights
+/plugin install ai-insights@ai-insights
+```
+
+| 종류 | 이름 | 하는 일 |
+|---|---|---|
+| command | `/harvest` | 방금 작업의 학습 후보를 3조건·거처·인코딩 문구로 제안 (승인 게이트) |
+| command | `/prune` | 낡았거나 중복인 지침·문서 항목의 삭제안 제안 |
+| command | `/steering-audit` | 지침 파일·스킬 트리거·요청 템플릿을 감사 — 남길 것 / 낡은 것 / 이전할 것 분류 |
+| skill | `learning-harvest` | 수확 루프 — 작업 종료·회고 맥락에서 자동 발동 |
+| skill | `rethinking-steering` | 지침·스킬·요청 템플릿을 쓰거나 손보는 맥락에서 자동 발동 |
+
+> skill·command는 **얇은 실행 래퍼**다. 원리 본문은 위 문서들이 단일 출처(SSoT)이며, 래퍼는 이를 참조만 한다. 방법론을 고칠 때는 문서를 고친다.
 
 ## 인덱스
 
+> 본문은 영어, `ko` 링크가 한국어판이다.
+
 | 문서 | 내용 |
 |---|---|
-| [컴파운딩 엔지니어링: 작업의 학습을 영속 산출물로 환류하는 방법론](./compounding-engineering-learning-harvest.md) | 작업 중 얻은 학습을 영속 산출물로 환류하는 수확 루프(추출→정주→인코딩→가지치기), 복리 위계, AI 요청 프롬프트 패턴, 가드레일 |
-| [고신호 에이전트 지침 설계: 문서가 아니라 런타임 컨텍스트로 다루기](./high-signal-agent-instruction-architecture.md) | 계층형 지침을 위험도 기반으로 경량화하고, 안정적 SSoT landmark·운영 불변식·자동화 이전·대표 작업 benchmark로 품질을 검증하는 방법 |
+| [컴파운딩 엔지니어링: 작업의 학습을 영속 산출물로 환류하는 방법론](./docs/compounding-engineering-learning-harvest.md) · [ko](./docs/compounding-engineering-learning-harvest.ko.md) | 작업 중 얻은 학습을 영속 산출물로 환류하는 수확 루프(추출→정주→인코딩→가지치기), 복리 위계, AI 요청 프롬프트 패턴, 가드레일 |
+| [프롬프트와 스킬 다시 생각하기: 유효기간이 있는 런타임 컨텍스트](./docs/rethinking-prompt-and-skills.md) · [ko](./docs/rethinking-prompt-and-skills.ko.md) | 지침을 상시 로드 컨텍스트 라우터로 설계하는 법(보존 게이트·색인·계층 지역화)과, 조타 문장이 낡는 이유·재감사 절차 — 트리거 예산, 경계 대칭화, 완료 계약 |

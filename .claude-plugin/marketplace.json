@@ -1,0 +1,25 @@
+{
+  "name": "ai-insights",
+  "owner": {
+    "name": "sbluemin",
+    "url": "https://github.com/sbluemin"
+  },
+  "metadata": {
+    "description": "Marketplace for generalized AI engineering methodology.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ai-insights",
+      "source": "./",
+      "description": "The harvest loop that feeds a task's learnings into durable artifacts, and how to design agent instructions as runtime context.",
+      "version": "0.1.0",
+      "category": "workflow",
+      "keywords": [
+        "compounding-engineering",
+        "methodology",
+        "agent-instructions"
+      ]
+    }
+  ]
+}
